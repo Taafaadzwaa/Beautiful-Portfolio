@@ -1,165 +1,97 @@
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import emailjs from "emailjs-com";
 
-export const Projects = () => {
+export const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // File: Contact.jsx
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
+      e.target,
+      import.meta.env.VITE_PUBLIC_KEY
+    )
+    // Change 'result' to '_' to ignore the unused parameter
+    .then(() => { 
+  alert("Message Sent!");
+  setFormData({ name: "", email: "", message: "" });
+})
+    .catch(() => alert("Oops! Something went wrong. Please try again."));
+};
   return (
     <section
-      id="projects"
+      id="contact"
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+        <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
+          <h2 className="text-3xl font-bold mb-8 bg-blue-500 bg-clip-text text-transparent text-center">
             {" "}
-            Featured Projects
+            Get in touch with Taffi
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-              <h3 className="text-xl font-bold mb-2"> Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable cloud infrastructure management with real-time
-                monitoring and automated scaling.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">AI Analytics Dashboard</h3>
-              <p className="text-gray-400 mb-4">
-                ML-powered data visualization platform with predictive analytics
-                and interactive reports.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Python", "TensorFlow", "D3.js", "Flask"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <div className="relative">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                placeholder="Name..."
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+              />
             </div>
 
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">E-Commerce Web App</h3>
-              <p className="text-gray-400 mb-4">
-                Full-stack e-commerce with modern UI, secure payment
-                integration, and customizable product inventory.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
+            <div className="relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                placeholder="example@gmail.com"
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+              />
             </div>
 
-            <div
-              className="
-              glass p-6 rounded-xl border border-white/10 
-              hover:-translate-y-1 hover:border-blue-500/30
-              hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-              transition-all
-            "
-            >
-              <h3 className="text-xl font-bold mb-2">Real-Time Chat App</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable chat platform supporting real-time messaging, presence,
-                and group chat features.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="
-                      bg-blue-500/10 text-blue-500 py-1 px-3 
-                      rounded-full text-sm
-                      transition
-                      hover:bg-blue-500/20 hover:-translate-y-0.5
-                      hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center ">
-                <a
-                  href="#"
-                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
+            <div className="relative">
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={5}
+                value={formData.message}
+                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
+                placeholder="Your Message..."
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
+              />
             </div>
-          </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </RevealOnScroll>
     </section>
