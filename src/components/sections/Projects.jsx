@@ -18,7 +18,7 @@ export const Projects = () => {
               <p className="text-gray-400 mb-4">
                 A single-page company website showcasing modern design, responsive layouts, and smooth UI flow./</p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
+                {["JavaScript", "HTML", "CSS", "Bootstrap"].map((tech, key) => (
                   <span
                     key={key}
                     className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
@@ -53,7 +53,7 @@ export const Projects = () => {
                 A redesigned version of my previous Python chatbot project, now cleaner, smarter, and more user-friendly.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["Python", "TensorFlow", "D3.js", "Flask"].map((tech, key) => (
+                {["Python"].map((tech, key) => (
                   <span
                     key={key}
                     className="
@@ -92,7 +92,7 @@ export const Projects = () => {
                 A fun, aesthetic HTML/CSS project where I focused on personality-driven interfaces and cleaner styling.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map(
+                {["HTML", "CSS"].map(
                   (tech) => (
                     <span
                       key={tech}
@@ -132,7 +132,7 @@ export const Projects = () => {
                 A youth-empowerment booking platform designed to make business tools more accessible for young entrepreneurs.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                {["Vibe coding"].map((tech, key) => (
                   <span
                     key={key}
                     className="
