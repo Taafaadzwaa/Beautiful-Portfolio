@@ -32,7 +32,7 @@ export const Projects = () => {
 
               <div className="flex justify-between items-center">
                 <a
-                  href="#"
+                  href="https://team3projects.netlify.app/"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
                   View Project ...
@@ -48,9 +48,9 @@ export const Projects = () => {
               transition-all
             "
             >
-              <h3 className="text-xl font-bold mb-2">AI Chatbot Rebuild</h3>
+              <h3 className="text-xl font-bold mb-2">Digital Clock</h3>
               <p className="text-gray-400 mb-4">
-                A redesigned version of my previous Python chatbot project, now cleaner, smarter, and more user-friendly.
+                A creative , simple and  user-friendly digital clock ive made with JavaScript , CSS and HTML.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Python"].map((tech, key) => (
@@ -71,7 +71,7 @@ export const Projects = () => {
               </div>
               <div className="flex justify-between items-center">
                 <a
-                  href="#"
+                  href="https://clockjavascriptproject.netlify.app/"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
                   View Project →
@@ -87,9 +87,9 @@ export const Projects = () => {
               transition-all
             "
             >
-              <h3 className="text-xl font-bold mb-2">Playlist-Themed Website</h3>
+              <h3 className="text-xl font-bold mb-2">Redesigned Salon website</h3>
               <p className="text-gray-400 mb-4">
-                A fun, aesthetic HTML/CSS project where I focused on personality-driven interfaces and cleaner styling.
+                A boring website turned to classy, aesthetic and marketable . This website was built in JavaScript , HTML and CSS project . I focused on personality-driven interfaces and cleaner styling.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["HTML", "CSS"].map(
@@ -111,7 +111,7 @@ export const Projects = () => {
               </div>
               <div className="flex justify-between items-center">
                 <a
-                  href="#"
+                  href="https://finalindividualbootstrapproject1.netlify.app/"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
                   View Project ...
@@ -149,7 +149,7 @@ export const Projects = () => {
               </div>
               <div className="flex justify-between items-center ">
                 <a
-                  href="#"
+                  href="https://book-ease-africa-copy-20d2914c.base44.app"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
                   View project ...
