@@ -149,7 +149,7 @@ export const Projects = () => {
               </div>
               <div className="flex justify-between items-center ">
                 <a
-                  href="https://book-ease-africa-copy-20d2914c.base44.app"
+                  href="https://book-ease-africa-3199c43c.base44.app"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
                   View project ...
